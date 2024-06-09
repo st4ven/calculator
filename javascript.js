@@ -81,7 +81,7 @@ numButtons.forEach((button) => {
 operButtons.forEach((button) => {
   // and for each one we add a 'click' listener
   button.addEventListener("click", (event) => {
-    if (operator == undefined) {
+    if (operator == undefined && step != 0) {
         step = 2;
         operator = button.textContent;
         display.textContent += button.textContent;
