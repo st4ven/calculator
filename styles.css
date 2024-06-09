@@ -11,7 +11,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    height: 650px;
+    height: 700px;
     width: 400px;
     background-color: #2D2A37;
     border-radius: 25px;
@@ -21,6 +21,17 @@ body {
 }
 
 .display {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 50px;
+    width: 400px;
+
+    font-size: 20px;
+    color: gray;
+    letter-spacing: 3px;
+}
+.solution {
     height: 80px;
     width: 400px;
     text-align: right;
@@ -70,4 +81,20 @@ button:hover {
 
 .zero {
     width: 185px;
+}
+
+.operations, .equals {
+    background-color: #e27602;
+}
+
+.operations:active, .equals:active{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #d24e01;
+}
+
+.top {
+    background-color: #808080;
+}
+
+.top:active {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #666666;
 }
