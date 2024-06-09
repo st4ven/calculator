@@ -42,10 +42,13 @@ let secondNumArray = [];
 const solution = document.querySelector(".solution");
 const display = document.querySelector(".display");
 const numButtons = document.querySelectorAll(".numbers");
-let operButtons = document.querySelectorAll(".operations");
+const operButtons = document.querySelectorAll(".operations");
 const clear = document.querySelector("#clear");
 const equals = document.querySelector(".equals");
+const decimal = document.querySelector(".decimal");
 
+
+/// This block of code handles the number buttons
 numButtons.forEach((button) => {
   // and for each one we add a 'click' listener
   button.addEventListener("click", () => {
@@ -62,6 +65,7 @@ numButtons.forEach((button) => {
   });
 });
 
+/// This block of code handles the operation buttons (+, -, /, *)
 operButtons.forEach((button) => {
   // and for each one we add a 'click' listener
   button.addEventListener("click", (event) => {
@@ -71,6 +75,7 @@ operButtons.forEach((button) => {
   });
 });
 
+/// This block of code handles the clear button
 clear.addEventListener("click", () => {
     display.textContent = "";
     solution.textContent = "0";
@@ -83,6 +88,20 @@ clear.addEventListener("click", () => {
     result = 0;
 });
 
+/// Handles the equals button
 equals.addEventListener("click", () => {
    solution.textContent = operate(num1, operator, num2);
+});
+
+/// Handles the decimal button
+decimal.addEventListener("click", () => {
+    display.textContent += decimal.textContent;
+
+    if (step == 0 || step == 1) {
+        numArray.push(decimal.textContent);
+        num1 = Number(numArray.join(''));
+    } else if (step == 2) {
+        numArray.push(decimal.textContent);
+        num2 = Number(secondNumArray.join(''));
+    }
 });
