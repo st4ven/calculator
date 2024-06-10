@@ -26,6 +26,9 @@ document.addEventListener("keydown", (e) => {
             break;
         case 'c':
             clearCase();
+            break;
+        case '.':
+            decimalCase();
     }
 });
 
@@ -52,7 +55,7 @@ function handleNumbers(key) {
 function equalCase() {
     step = 3;
     decimal.disabled = true;
-    solution.textContent = operate(num1, operator, num2);
+    solution.textContent = (operate(num1, operator, num2)).toString().substring(0,10);
 }
 
 function operations(key) {
@@ -69,6 +72,30 @@ function operations(key) {
         display.textContent += operator;
         decimal.disabled = false;
     }
+
+    if (step == 3) {
+        if (key == '+' || key == '-') {
+            operator = key;
+        } else if (key == '*') {
+            operator = '×';
+        } else if (key == '/') {
+            operator = '÷';
+        }
+
+        num1 = solution.textContent;
+        num2 = undefined;
+        secondNumArray = [];
+        numArray = [];
+        decimal.disabled = false;
+
+        step = 2;
+        for (var i = 0; i < num1.length; i++) {
+            numArray.push(num1[i]);
+        }
+
+        num1 = Number(numArray.join(''));
+        display.textContent = num1 + operator;
+    }
 }
 
 function clearCase() {
@@ -82,4 +109,25 @@ function clearCase() {
     secondNumArray = [];
     
     decimal.disabled = false;
+}
+
+function decimalCase() {
+
+    if (step == 0 || step == 1) {
+        if (numArray.includes(".") == false) {
+            numArray.push('.');
+            num1 = Number(numArray.join(''));
+            decimal.disabled = true;
+
+            display.textContent += '.';
+        }
+    } else if (step == 2) {
+        if (!(secondNumArray.includes('.'))) {
+            secondNumArray.push('.');
+            num2 = Number(secondNumArray.join(''));
+            decimal.disabled = true;
+
+            display.textContent += '.';
+        }
+    }
 }
