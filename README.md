@@ -7,14 +7,14 @@
 
 ## [Live Webpage](https://st4ven.github.io/calculator/)
 
-** Features **
+**Features**
 - Perform basic math operations
 - Use decimals and percentages
 - Ability to chain operations
 - Rounds numbers to avoid overflowing the display
 - Keyboard support!
 
-** Usage Instructions **
+**Usage Instructions**
 You can interact using the UI or the keyboard.
 - Numbers: 0-9 keys
 - Clear: C key
