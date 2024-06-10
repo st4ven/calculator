@@ -14,7 +14,7 @@
 - Rounds numbers to avoid overflowing the display
 - Keyboard support!
 
-**Usage Instructions**_
+**Usage Instructions**__
 You can interact using the UI or the keyboard.
 - Numbers: 0-9 keys
 - Clear: C key
