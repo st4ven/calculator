@@ -110,23 +110,12 @@ operButtons.forEach((button) => {
 
 /// This block of code handles the clear button
 clear.addEventListener("click", () => {
-    display.textContent = "";
-    solution.textContent = "0";
-    num1 = undefined;
-    num2 = undefined;
-    operator = undefined;
-    step = 0;
-    numArray = [];
-    secondNumArray = [];
-    
-    decimal.disabled = false;
+    clearCase();
 });
 
 /// Handles the equals button
 equals.addEventListener("click", () => {
-    step = 3;
-    decimal.disabled = true;
-    solution.textContent = operate(num1, operator, num2);
+    equalCase();
 });
 
 /// Handles the decimal button
